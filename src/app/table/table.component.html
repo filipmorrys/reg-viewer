@@ -1,0 +1,17 @@
+<div class="table-panel">
+    <table>
+      <caption>
+        Horario planificado
+      </caption>
+      <thead>
+        <tr>
+          <th *ngFor="let header of tableData.headers" [ngClass]="'col'+header.index">{{ header.label }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of tableData.data">
+          <td *ngFor="let cell of row" [ngClass]="'col'+cell.index">{{ cell.value }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
