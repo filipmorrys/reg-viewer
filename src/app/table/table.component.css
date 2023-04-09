@@ -1,0 +1,61 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: small;
+}
+
+th,
+td {
+    border: 1px solid black;
+    margin: 0px;
+    padding: 4px;
+}
+
+th {
+    background-color: olivedrab;
+    color: lightgrey;
+}
+
+tr:hover {
+    background-color: rgb(26, 80, 13);
+    color: lightgrey;
+}
+
+.table-panel {
+    overflow: auto;
+    scroll-behavior: auto;
+    display: block;
+}
+
+.caption {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(26, 80, 13);
+    align-items: center;
+}
+
+.caption-title {
+    font-size: 32px;
+    color: white;
+}
+
+.caption-actions a {
+    font-size: medium;
+    color: white;
+    text-decoration: none;
+}
+
+.caption-actions a:hover {
+    background-color: gray;
+    color: white;
+}
+
+.hidden-panel {
+    background-color: rgb(26, 80, 13);
+    border: 1px solid white;
+    color: white;
+    position: absolute;
+    right: 20px;
+    padding: 20px;
+    visibility: hidden;
+}

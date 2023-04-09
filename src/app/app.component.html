@@ -8,65 +8,9 @@
 </head>
 
 <body>
-  <div class="table-panel">
-    <table>
-      <caption>
-        Horario planificado
-      </caption>
-      <thead>
-        <tr>
-          <th class="col0">S. Node</th>
-          <th class="col1">S. TCZ</th>
-          <th class="col2">S. TCZ Type</th>
-          <th class="col3">S. St Track</th>
-          <th class="col4">S. Circ Track</th>
-          <th class="col5">S. Distance</th>
-          <th class="col6">S. TRP Type</th>
-          <th class="col7">S. Arrival Hour</th>
-          <th class="col8">S. Commercial Hour</th>
-          <th class="col9">S. Technical Hour</th>
-          <th class="col10">S. Departure Hour</th>
-          <th class="col11">C. Node</th>
-          <th class="col12">C. TCZ</th>
-          <th class="col13">C. TCZ Order</th>
-          <th class="col14">C. St Track</th>
-          <th class="col15">C. Circ Track</th>
-          <th class="col16">C. Distance</th>
-          <th class="col17">C. TCZ Type</th>
-          <th class="col18">C. Arrival Hour</th>
-          <th class="col19">C. Commercial Hour</th>
-          <th class="col20">C. Technical Hour</th>
-          <th class="col21">C. Departure Hour</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let d of data">
-          <td class="col0">{{d.servTcz.nodeMnemonic}}</td>
-          <td class="col1">{{d.servTcz.tczName}}</td>
-          <td class="col2">{{d.servTcz.tczType}}</td>
-          <td class="col3">{{d.servTcz.mnemonicStationingTrack}}</td>
-          <td class="col4">{{d.servTcz.mnemonicCirculationTrack}}</td>
-          <td class="col5">{{d.servTcz.distance}}</td>
-          <td class="col6"><ng-container *ngIf="d.servTrp">{{d.servTrp.trpType}}</ng-container></td>
-          <td class="col7"><ng-container *ngIf="d.servTrp">{{toDate(d.servTrp.arrival)}}</ng-container></td>
-          <td class="col8"><ng-container *ngIf="d.servTrp">{{toDate(d.servTrp.commercialDeparture)}}</ng-container></td>
-          <td class="col9"><ng-container *ngIf="d.servTrp">{{toDate(d.servTrp.technicalDeparture)}}</ng-container></td>
-          <td class="col10"><ng-container *ngIf="d.servTrp">{{toDate(d.servTrp.departureTime)}}</ng-container></td>
-          <td class="col11"><ng-container *ngIf="d.circTcz">{{d.circTcz.nodeId}}</ng-container></td>
-          <td class="col12"><ng-container *ngIf="d.circTcz">{{d.circTcz.tczPublicId}}</ng-container></td>
-          <td class="col13"><ng-container *ngIf="d.circTcz">{{d.circTcz.tczOrder}}</ng-container></td>
-          <td class="col14"><ng-container *ngIf="d.circTcz">{{d.circTcz.stTrackPubId}}</ng-container></td>
-          <td class="col15"><ng-container *ngIf="d.circTcz">{{d.circTcz.circTrackPubId}}</ng-container></td>
-          <td class="col16"><ng-container *ngIf="d.circTcz">{{d.circTcz.distance}}</ng-container></td>
-          <td class="col17"><ng-container *ngIf="d.circTcp">{{d.circTcp.type}}</ng-container></td>
-          <td class="col18"><ng-container *ngIf="d.circTcp">{{toDate(d.circTcp.arrival.hour)}}</ng-container></td>
-          <td class="col19"><ng-container *ngIf="d.circTcp">{{toDate(d.circTcp.departure.commercial)}}</ng-container></td>
-          <td class="col20"><ng-container *ngIf="d.circTcp">{{toDate(d.circTcp.departure.technical)}}</ng-container></td>
-          <td class="col21"><ng-container *ngIf="d.circTcp">{{toDate(d.circTcp.departure.hour)}}</ng-container></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+
+    <app-table [tableData]="tableData"></app-table>
+  
 </body>
 
 </html>

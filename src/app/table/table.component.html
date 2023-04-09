@@ -1,17 +1,35 @@
-<div class="table-panel">
+<div class="table-panel" >
+    <div class="caption">
+        <div class="caption-title">
+            Horario planificado
+        </div>
+        <div class="caption-actions">
+            <a href="#" (click)="openPanel()">Ocultar</a>
+            <div class="hidden-panel" #hiddenPanel>
+                <ng-container *ngFor="let header of tableData.headers">
+                    
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" [id]="'check'+header.index" #check (change)="checkChange($event, header)">
+                            <label [for]="'check'+header.index">{{ header.label }}</label>
+                        </label>
+                    </div>
+                    
+                </ng-container>
+                <button (click)="closePanel()">Close</button>
+            </div>
+        </div>
+    </div>
     <table>
-      <caption>
-        Horario planificado
-      </caption>
-      <thead>
-        <tr>
-          <th *ngFor="let header of tableData.headers" [ngClass]="'col'+header.index">{{ header.label }}</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let row of tableData.data">
-          <td *ngFor="let cell of row" [ngClass]="'col'+cell.index">{{ cell.value }}</td>
-        </tr>
-      </tbody>
+        <thead>
+            <tr>
+                <th *ngFor="let header of tableData.headers" [ngClass]="'col'+header.index" [ngStyle]="{'display': colStyles[header.index]}">{{ header.label }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of tableData.cells">
+                <td *ngFor="let cell of row" [ngClass]="'col'+cell.index" [ngStyle]="{'display': colStyles[cell.index]}">{{ cell.value }}</td>
+            </tr>
+        </tbody>
     </table>
-  </div>
+</div>
